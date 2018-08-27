@@ -36,6 +36,10 @@ error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
 
 <body class="login-page">
     <div class="login-box">
+        <div class="logo">
+            <a href="javascript:void(0);"><b>Selamat Datang</b></a>
+            <small>Aplikasi Perpustakaan</small>
+        </div>
         <div class="card">
             <div class="body">
                 <form id="sign_in" method="POST">
@@ -59,6 +63,11 @@ error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
                     <div class="row">
                         <div class="col-xs-4">
                             <input type="submit" name="login" value="Login" class="btn btn-block bg-pink waves-effect"  >
+                        </div>
+                    </div>
+                    <div class="row m-t-15 m-b--20">
+                        <div class="col-xs-6">
+                            <a href="signup.php">Register Now!</a>
                         </div>
                     </div>
                    
@@ -105,7 +114,7 @@ error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
             if($data['level']== "admin"){
                 $_SESSION['admin'] = $data['id'];
                 header("location:index.php");
-            }else if ($data['level'] == "user"){
+            }else if ($data['level'] == "pegawai"){
                  $_SESSION['pegawai'] = $data['id'];
                 header("location:index.php");
             }

@@ -10,31 +10,31 @@ $conn = new mysqli("localhost", "root", "", "perpus");
 	}
 </style>
 <table border="1" width="100%" style="border-collapse: collapse;">
-	<caption>Laporan Data Anggota</caption>
+	<caption>Laporan Data Transaksi</caption>
 	<thead>
 		<tr>
 			<th>Nomor</th>
+            <th>Judul</th>
             <th>NPM</th>
             <th>Nama</th>
-            <th>Kelas</th>
-            <th>Tanggal Lahir</th>
-            <th>Kelamin</th>
-            <th>Jurusan</th>
+            <th>Tanggal Pinjam</th>
+            <th>Tanggal Kembali</th>
+            <th>Status</th>
 		</tr>
 	</thead>
 	<tbody>
 		<?php 
 			  $no = 1;
-			  $sql = $conn->query("SELECT * FROM anggota");
+			  $sql = $conn->query("SELECT * FROM transaksi WHERE status = 'Kembali'");
               while($row = $sql->fetch_assoc()) {?>
              <tr>
               <td><?=$no++ ?></td>
-              <td><?=$row['npm']  ?></td>
+              <td><?=$row['judul']  ?></td>
                <td><?=$row['nama']  ?></td>
-               <td><?=$row['kelas']  ?></td>
-               <td><?=$row['tgl_lahir']  ?></td>
-                <td><?=$row['kelamin']  ?></td>
-                <td><?=$row['jurusan']  ?></td>
+               <td><?=$row['npm']  ?></td>
+               <td><?=$row['tgl_pinjam']  ?></td>
+                <td><?=$row['tgl_kembali']  ?></td>
+                <td><?=$row['status']  ?></td>
 			                                           
 			   </tr>
         <?php } ?>

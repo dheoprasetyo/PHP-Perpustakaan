@@ -47,9 +47,9 @@ $kelamin = $tampil["kelamin"];
                             <label for="">Kelamin</label>
                             <div class="demo-radio-button">
                                 <input name="kelamin" type="radio" id="radio_1" value="L" <?php echo($kelamin=='L')?"checked":""; ?> />
-                                <label for="radio_1">Laki2</label>
+                                <label for="radio_1">Laki Laki</label>
                                 <input name="kelamin" type="radio" id="radio_2" value="P" <?php echo ($kelamin=='P')?"checked":""; ?> />
-                                <label for="radio_2">Cewek</label>
+                                <label for="radio_2">Perempuan</label>
                             </div>
                             
 

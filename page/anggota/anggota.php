@@ -49,3 +49,4 @@
                                 </table>
                                 <a href="?page=anggota&aksi=tambah" class="btn btn-primary">Tambah Data</a>
                                 <a href="page/anggota/cetak.php" target="blank" class="btn btn-default">Cetak</a>
+                                <a href="./laporan/laporan_anggota.php" target="blank" class="btn btn-success"></i>ExportToExcel</a>

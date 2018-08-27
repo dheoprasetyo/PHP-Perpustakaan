@@ -64,3 +64,4 @@
                                     </tbody>
                                 </table>
                                 <a href="?page=transaksi&aksi=tambah" class="btn btn-primary">Tambah Data</a>
+                                <a href="page/transaksi/cetak.php" target="blank" class="btn btn-default">Cetak</a>

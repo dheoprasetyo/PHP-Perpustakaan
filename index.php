@@ -14,7 +14,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Blank Page | Bootstrap Based Admin Template - Material Design</title>
+    <title>Perpustakaan</title>
     <!-- Favicon-->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -346,7 +346,7 @@
 
                     <li>
                         <a href="?page=buku">
-                            <i class="material-icons">person</i>
+                            <i class="material-icons">local_library</i>
                             <span>Data Buku</span>
                         </a>
                     </li>

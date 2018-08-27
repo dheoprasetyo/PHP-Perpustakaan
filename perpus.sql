@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 17 Agu 2018 pada 11.23
+-- Waktu pembuatan: 27 Agu 2018 pada 16.30
 -- Versi server: 10.1.30-MariaDB
 -- Versi PHP: 7.2.2
 
@@ -42,8 +42,8 @@ CREATE TABLE `anggota` (
 --
 
 INSERT INTO `anggota` (`npm`, `nama`, `kelas`, `tgl_lahir`, `kelamin`, `jurusan`) VALUES
-('51416933', 'Dheo Prasetyo', '2IA01', '1998-12-20', 'P', 'ITggg'),
-('55', '4w', '2IA01', '2018-08-03', 'P', 'ddd');
+('51416933', 'Dheo Prasetyo', '2IA01', '1998-12-20', 'L', 'Informatika'),
+('66666666', 'tytyh', '3ia01', '2018-08-01', 'L', 'informatika');
 
 -- --------------------------------------------------------
 
@@ -68,7 +68,8 @@ CREATE TABLE `buku` (
 --
 
 INSERT INTO `buku` (`id`, `judul`, `pengarang`, `penerbit`, `tahun_terbit`, `isbn`, `jumlah_buku`, `lokasi`, `tgl_input`) VALUES
-(1, 'Php ', 'Dheo', 'Dheo', '1993', '1344444', 10, 'rak1', '2018-08-01');
+(1, 'Php ', 'Dheo', 'Dheo', '1993', '1344444', 10, 'rak1', '2018-08-01'),
+(2, 'Belajar Laravel', 'Budi Raharjo', 'Informatika', '2016', '5555555555555', 5, 'rak3', '2018-08-02');
 
 -- --------------------------------------------------------
 
@@ -92,8 +93,9 @@ CREATE TABLE `transaksi` (
 
 INSERT INTO `transaksi` (`id`, `judul`, `npm`, `nama`, `tgl_pinjam`, `tgl_kembali`, `status`) VALUES
 (2, 'Php ', '51416933', 'Dheo Prasetyo', '16-08-2018', '23-08-2018', 'Kembali'),
-(3, 'Php ', '51416933', 'Dheo Prasetyo', '17-08-2018', '31-08-2018', 'Pinjam'),
-(4, 'Php ', '55', '4w', '17-08-2018', '24-08-2018', 'Pinjam');
+(3, 'Php ', '51416933', 'Dheo Prasetyo', '17-08-2018', '31-08-2018', 'Kembali'),
+(4, 'Php ', '55', '4w', '17-08-2018', '24-08-2018', 'Pinjam'),
+(5, 'Php ', '51416933', 'Dheo Prasetyo', '22-08-2018', '12-09-2018', 'Pinjam');
 
 -- --------------------------------------------------------
 
@@ -115,7 +117,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `nama`, `level`, `foto`) VALUES
-(1, 'admin', 'admin', 'Dheo PN', 'admin', 'u.jpg');
+(1, 'admin', 'admin', 'Dheo PN', 'admin', 'u.jpg'),
+(12, 'Pegawai', '123456', 'pegawai', 'pegawai', 'dheo.jpg');
 
 --
 -- Indexes for dumped tables
@@ -153,19 +156,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `buku`
 --
 ALTER TABLE `buku`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
