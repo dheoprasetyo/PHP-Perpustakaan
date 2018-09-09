@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 27 Agu 2018 pada 16.30
--- Versi server: 10.1.30-MariaDB
--- Versi PHP: 7.2.2
+-- Generation Time: Sep 09, 2018 at 06:52 AM
+-- Server version: 10.1.30-MariaDB
+-- PHP Version: 7.2.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `anggota`
+-- Table structure for table `anggota`
 --
 
 CREATE TABLE `anggota` (
@@ -38,7 +38,7 @@ CREATE TABLE `anggota` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `anggota`
+-- Dumping data for table `anggota`
 --
 
 INSERT INTO `anggota` (`npm`, `nama`, `kelas`, `tgl_lahir`, `kelamin`, `jurusan`) VALUES
@@ -48,7 +48,7 @@ INSERT INTO `anggota` (`npm`, `nama`, `kelas`, `tgl_lahir`, `kelamin`, `jurusan`
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `buku`
+-- Table structure for table `buku`
 --
 
 CREATE TABLE `buku` (
@@ -64,17 +64,17 @@ CREATE TABLE `buku` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `buku`
+-- Dumping data for table `buku`
 --
 
 INSERT INTO `buku` (`id`, `judul`, `pengarang`, `penerbit`, `tahun_terbit`, `isbn`, `jumlah_buku`, `lokasi`, `tgl_input`) VALUES
 (1, 'Php ', 'Dheo', 'Dheo', '1993', '1344444', 10, 'rak1', '2018-08-01'),
-(2, 'Belajar Laravel', 'Budi Raharjo', 'Informatika', '2016', '5555555555555', 5, 'rak3', '2018-08-02');
+(2, 'Belajar Laravel', 'Budi Raharjo', 'Informatika', '2016', '5555555555555', 4, 'rak3', '2018-08-02');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `transaksi`
+-- Table structure for table `transaksi`
 --
 
 CREATE TABLE `transaksi` (
@@ -88,87 +88,90 @@ CREATE TABLE `transaksi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `transaksi`
+-- Dumping data for table `transaksi`
 --
 
 INSERT INTO `transaksi` (`id`, `judul`, `npm`, `nama`, `tgl_pinjam`, `tgl_kembali`, `status`) VALUES
 (2, 'Php ', '51416933', 'Dheo Prasetyo', '16-08-2018', '23-08-2018', 'Kembali'),
 (3, 'Php ', '51416933', 'Dheo Prasetyo', '17-08-2018', '31-08-2018', 'Kembali'),
 (4, 'Php ', '55', '4w', '17-08-2018', '24-08-2018', 'Pinjam'),
-(5, 'Php ', '51416933', 'Dheo Prasetyo', '22-08-2018', '12-09-2018', 'Pinjam');
+(5, 'Php ', '51416933', 'Dheo Prasetyo', '22-08-2018', '12-09-2018', 'Pinjam'),
+(6, 'Belajar Laravel', '66666666', 'tytyh', '08-09-2018', '15-09-2018', 'Kembali'),
+(7, 'Belajar Laravel', '66666666', 'tytyh', '08-09-2018', '15-09-2018', 'Pinjam');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `username` varchar(11) NOT NULL,
-  `password` varchar(20) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `nama` varchar(40) NOT NULL,
   `level` varchar(20) NOT NULL,
   `foto` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `nama`, `level`, `foto`) VALUES
 (1, 'admin', 'admin', 'Dheo PN', 'admin', 'u.jpg'),
-(12, 'Pegawai', '123456', 'pegawai', 'pegawai', 'dheo.jpg');
+(28, 'user', '$2y$10$9HwMKHapxYCILj6WIDqnHuE11wj/4ggS6RRFzvNYzdd1jp1VKx49W', 'Dheo', 'pegawai', 'dheo.jpg'),
+(29, 'Dheo', '$2y$10$8lhj6kLyUMlVNmUrM9BOj.UUQD.SIwPJwbSBCDxMrmpmrNlfTg4BG', 'Dheo Prasetyo', 'admin', 'dheo.jpg');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `anggota`
+-- Indexes for table `anggota`
 --
 ALTER TABLE `anggota`
   ADD PRIMARY KEY (`npm`);
 
 --
--- Indeks untuk tabel `buku`
+-- Indexes for table `buku`
 --
 ALTER TABLE `buku`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `transaksi`
+-- Indexes for table `transaksi`
 --
 ALTER TABLE `transaksi`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `buku`
+-- AUTO_INCREMENT for table `buku`
 --
 ALTER TABLE `buku`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `transaksi`
+-- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT untuk tabel `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

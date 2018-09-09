@@ -42,7 +42,7 @@ error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
         </div>
         <div class="card">
             <div class="body">
-                <form id="sign_in" method="POST">
+                <form id="" method="POST">
                     <div class="msg">Masukkan Username dan Password</div>
                     <div class="input-group">
                         <span class="input-group-addon">
@@ -99,17 +99,41 @@ error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
 <?php 
     $username = $_POST['username'];
     $password = $_POST['password'];
-
+   
     $login = $_POST['login']; 
 
     if($login) {
-        $sql = $conn->query("SELECT * FROM user WHERE username = '$username' and password = '$password'");
 
-        $ketemu = $sql->num_rows;
-        $data = $sql->fetch_assoc();
-        
+        $sql = $conn->query("SELECT * FROM user WHERE username='$username'");
 
-        if($ketemu >=1){
+        if($sql->num_rows >= 1){
+            $data = $sql->fetch_assoc();
+
+            if(password_verify($password, $data['password'])){
+                session_start();
+                if($data['level']== "admin"){
+                    $_SESSION['admin'] = $data['id'];
+                    header("location:index.php");
+                }else if ($data['level'] == "pegawai"){
+                    $_SESSION['pegawai'] = $data['id'];
+                    header("location:index.php");
+                }
+            }else{
+                ?>
+            <script type="text/javascript">alert("login gagal");</script>
+            <?php 
+            }
+        }
+
+    // if($login) {
+    //     $sql = $conn->query("SELECT * FROM user WHERE username = '$username' and password = '$password'");
+
+    //     $ketemu = $sql->num_rows;
+    //     $data = $sql->fetch_assoc();
+     
+
+
+        /*if($ketemu >=1){
             session_start();
             if($data['level']== "admin"){
                 $_SESSION['admin'] = $data['id'];
@@ -122,8 +146,8 @@ error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
         ?>
             <script type="text/javascript">alert("login gagal");</script>
             <?php 
-    }
-    }
-            
+           
+        }*/
+    }     
 
 } ?>

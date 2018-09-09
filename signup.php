@@ -131,7 +131,10 @@
 <?php 
 if (isset($_POST['daftar'])) {
     $username = $_POST['username'];
-    $password =$_POST['password'];
+    // $password =$_POST['password'];
+    
+    // $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+    $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
     $nama = $_POST['nama'];
    
     // $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
